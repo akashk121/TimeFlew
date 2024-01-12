@@ -1,0 +1,48 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Agbalumo', system-ui;
+}
+.main{
+    background-image: url('images/1.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 2em;
+}
+.container{
+text-align: center;
+}
+#audioWrapper {
+    position: fixed;
+    top: -100px;
+}
+@media only screen and (max-width: 768px) {
+    .main {
+        height: 100vh; 
+    }
+
+    .container {
+        padding: 20px; 
+    }
+
+    h2 {
+        font-size: 1.8em; 
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+     #audioWrapper {
+         display: none;
+    }
+}
