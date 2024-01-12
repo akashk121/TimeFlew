@@ -26,10 +26,7 @@ h3{
 text-align: center;
 line-height: 24px;
 }
-#audioWrapper {
-    position: fixed;
-    top: -100px;
-}
+
 @media only screen and (max-width: 768px) {
     .main {
         height: 100vh; 
@@ -48,7 +45,5 @@ line-height: 24px;
     h3 {
         font-size: 1.2em;
     }
-     #audioWrapper {
-         display: none;
-    }
+   
 }

@@ -1,5 +1,25 @@
 
 document.addEventListener('DOMContentLoaded', function () {
+    const shouldPlayAudio = window.confirm("Do you want to play background audio?");
+    
+    if (shouldPlayAudio) {
+        const audio = new Audio('music/musiccarol.mp3');
+        audio.loop = true;
+
+        // Play the audio
+        function handleInteraction() {
+            audio.play().catch(error => {
+                console.error("Error playing audio:", error);
+            });
+
+            // Remove the event listener after the first interaction
+            document.removeEventListener('click', handleInteraction);
+        }
+
+        // Add event listener for user interaction
+        document.addEventListener('click', handleInteraction);
+    }
+
     function updateTime() {
         const d = new Date();
         var month = d.getDate();
