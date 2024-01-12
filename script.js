@@ -16,13 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function formatTime(time) {
         return time < 10 ? `0${time}` : time;
     }
+    if ('wakeLock' in navigator) {
+        navigator.wakeLock.request('screen').then((wakeLock) => {
+            console.log('Wake Lock active');
+            // Call updateTime function every second
+            setInterval(updateTime, 1000);
+        }).catch((error) => {
+            console.error('Wake Lock error: ', error);
+        });
+    }
 
-    // Initial call to update time
-    updateTime();
-
-    // Set interval to update time every second
-    setInterval(updateTime, 1000);
-
+   
     // Audio
     const song = document.getElementById('audioForBackground');
     song.play();
